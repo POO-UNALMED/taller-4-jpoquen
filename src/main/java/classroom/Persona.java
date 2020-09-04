@@ -2,15 +2,19 @@ package classroom;
 
 public class Persona {
 
-    final long cedula;
+    long cedula; //No hacer este atributo constante
     String nombre;
     static int totalPersonas;
     
     static {
         totalPersonas = 0;
-        cedula = 3;
+        //cedula = 3; Extraer/eliminar esta inicialización atributo ya que no esta definido como estatico
     }
 
+    Persona(){
+    	totalPersonas++;
+    }
+    
     Persona(long cedula, String nombre) {
         this.cedula = cedula;
         this.nombre = nombre;
@@ -31,6 +35,7 @@ public class Persona {
 
     Persona(String nombre) {
         this.nombre = "";
+        this.cedula = 1;
         totalPersonas++;
     }
     
